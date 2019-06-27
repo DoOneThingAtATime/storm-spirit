@@ -1,5 +1,7 @@
 <template>
-  <div>gua-footer</div>
+  <div>
+    💡 There's no safe harbor from this storm, Kunkka!
+  </div>
 </template>
 
 <script>
