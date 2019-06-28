@@ -12,6 +12,7 @@ const router = new Router({
   routes: [
     {
       path: '/user',
+      hideInMenu: true,
       component: () =>
         import(/* webpackChunkName: "user" */ './layouts/UserLayout'),
       redirect: '/user/login',
@@ -39,28 +40,36 @@ const router = new Router({
         {
           path: '/dashboard',
           name: 'dashboard',
-          component: { render: h => h('router-view') }
-        },
-        {
-          path: '/dashboard/analysis',
-          name: 'analysis',
-          component: () =>
-            import(/* webpackChunkName: "dashboard" */ './views/Dashboard/Analysis')
+          meta: { icon: 'dashboard', title: '仪表盘' },
+          component: { render: h => h('router-view') },
+          children: [
+            {
+              path: '/dashboard/analysis',
+              name: 'analysis',
+              meta: { title: '分析页' },
+              component: () =>
+                import(/* webpackChunkName: "dashboard" */ './views/Dashboard/Analysis')
+            }
+          ]
         },
         {
           path: '/form',
           name: 'form',
+          meta: { icon: 'form', title: '表单' },
           component: { render: h => h('router-view') },
           children: [
             {
               path: '/form/basic-form',
               name: 'basicForm',
+              meta: { title: '基础表单' },
               component: () =>
                 import(/* webpackChunkName: "form" */ './views/Forms/BasicForm')
             },
             {
               path: '/form/step-form',
               name: 'stepForm',
+              meta: { title: '分步表单' },
+              hideChildrenInMenu: true,
               component: () =>
                 import(/* webpackChunkName: "form" */ './views/Forms/StepForm'),
               redirect: '/form/step-form/info',
@@ -92,6 +101,7 @@ const router = new Router({
     {
       path: '/*',
       name: '404',
+      hideInMenu: true,
       component: NoutFound
     }
   ]

@@ -3,12 +3,13 @@ import router from './router'
 import store from './store'
 import App from './App.vue'
 
-import { Button, Layout, Icon, Drawer, Radio } from 'ant-design-vue'
+import { Button, Layout, Icon, Drawer, Radio, Menu } from 'ant-design-vue'
 Vue.use(Button)
 Vue.use(Layout)
 Vue.use(Icon)
 Vue.use(Drawer)
 Vue.use(Radio)
+Vue.use(Menu)
 
 Vue.config.productionTip = false
 

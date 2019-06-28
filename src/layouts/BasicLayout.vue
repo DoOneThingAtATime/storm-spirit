@@ -7,11 +7,12 @@
         :trigger="null"
         collapsible
         v-model="collapsed"
+        width="256px"
       >
-        <div class="logo">
+        <h2 class="logo">
           💡 There's no safe harbor from this storm, Kunkka!
-        </div>
-        <s-s-side-menu></s-s-side-menu>
+        </h2>
+        <s-s-side-menu :theme="navTheme"></s-s-side-menu>
       </a-layout-sider>
 
       <a-layout>
@@ -75,7 +76,7 @@ export default {
   }
 }
 .logo {
-  height: 64px;
+  padding: 8px;
   text-align: center;
   overflow: hidden;
 }
