@@ -32,7 +32,9 @@
         </a-layout-footer>
       </a-layout>
     </a-layout>
-    <setting-drawer />
+    <Authorized :authority="['admin']">
+      <setting-drawer />
+    </Authorized>
   </div>
 </template>
 
