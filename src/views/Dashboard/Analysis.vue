@@ -38,8 +38,6 @@ export default {
       this.chartOption.series[0].data = this.chartOption.series[0].data.map(
         () => Math.floor(Math.random() * 100)
       )
-      console.log(1)
-      console.log(this.chartOption.series[0].data)
     }, 1700)
   },
   beforeDestroy() {

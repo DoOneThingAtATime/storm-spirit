@@ -20,7 +20,6 @@ export default {
     // }
     option: {
       handler(val) {
-        console.log('gua')
         this.chart.setOption(val)
       },
       deep: true
