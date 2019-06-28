@@ -1,13 +1,12 @@
 <template>
-  <div>side-menu-gua</div>
+  <div>
+    <p>side-menu-gua</p>
+  </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>
 
 <style>
-
 </style>

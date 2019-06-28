@@ -1,13 +1,15 @@
 <template>
-  <div>gua-header</div>
+  <div class="header">
+    <div>gua-header</div>
+  </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>
 
-<style>
-
+<style lang="less" scoped>
+.header {
+  float: right;
+}
 </style>
