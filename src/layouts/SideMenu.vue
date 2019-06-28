@@ -23,6 +23,8 @@
 
 <script>
 import SubMenu from './SubMenu'
+import { check } from '../utils/auth'
+
 export default {
   props: {
     theme: {
@@ -58,6 +60,13 @@ export default {
     getMenuData(routes = [], parentKeys = [], selectedKey) {
       const result = []
       routes.forEach(route => {
+        if (
+          route.meta &&
+          route.meta.authority &&
+          !check(route.meta.authority)
+        ) {
+          return
+        }
         if (route.name && !route.hideInMenu) {
           this.openKeysMap[route.path] = parentKeys
           this.selectedKeysMap[route.path] = [selectedKey || route.path]
