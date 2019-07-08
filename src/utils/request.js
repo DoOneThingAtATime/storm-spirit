@@ -8,7 +8,11 @@ function request (options) {
     console.log(error)
     const { response: { status, statusText } } = error
     notification.error({
-      message: status,
+      message: h => (
+        <div>
+          请求错误 <span style="color: red">{status}</span> : {options.url}
+        </div>
+      ),
       description: statusText
     })
     return Promise.reject(error)

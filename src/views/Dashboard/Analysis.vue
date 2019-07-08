@@ -38,7 +38,7 @@ export default {
     this.getChartData()
     this.interval = setInterval(() => {
       this.getChartData()
-    }, 1700)
+    }, 30 * 60 * 1000)
   },
   beforeDestroy () {
     clearInterval(this.interval)
